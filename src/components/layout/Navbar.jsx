@@ -8,7 +8,7 @@ export function Navbar() {
     { name: '적용 분야', path: '/applications' },
     { name: '서비스', path: '/services' },
     { name: '시장조사', path: '/market-research' },
-    { name: '휴텍씨 소개', path: '/about-hutec' },
+    { name: '그룹소개', path: 'https://hutechc.com/', external: true },
     { name: '문의하기', path: '/contact' },
   ];
 
@@ -20,15 +20,27 @@ export function Navbar() {
         </Link>
         <nav className="hidden md:flex items-center space-x-6">
           {links.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                location.pathname === link.path ? 'text-primary' : 'text-foreground'
-              }`}
-            >
-              {link.name}
-            </Link>
+            link.external ? (
+              <a
+                key={link.path}
+                href={link.path}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium transition-colors hover:text-primary text-foreground"
+              >
+                {link.name}
+              </a>
+            ) : (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`text-sm font-medium transition-colors hover:text-primary ${
+                  location.pathname === link.path ? 'text-primary' : 'text-foreground'
+                }`}
+              >
+                {link.name}
+              </Link>
+            )
           ))}
         </nav>
       </div>
