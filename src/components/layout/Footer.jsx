@@ -15,7 +15,7 @@ export function Footer() {
 
           {/* Right Column: Contact */}
           <div className="flex flex-col gap-4 min-w-[280px]">
-            <h4 className="font-bold text-foreground mb-1 text-[15px]">연락처</h4>
+            <h4 className="font-bold text-foreground mb-1 text-[15px]">CONTACT </h4>
             <ul className="space-y-4 text-[14px] text-muted-foreground">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
